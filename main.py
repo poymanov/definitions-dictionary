@@ -15,6 +15,8 @@ def find_word(word):
 
 	if word in data:
 		return data[word]
+	elif word.title() in data:
+		return data[word.title()]
 	else:
 		suggest_words = get_close_matches(word, data.keys())
 
