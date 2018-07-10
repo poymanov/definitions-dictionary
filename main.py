@@ -24,11 +24,11 @@ def find_word(word):
 			if answer == 'Y':
 				return data[suggest_words[0]]
 			elif answer == 'N':
-				return [messages['word_not_exist']]
+				return messages['word_not_exist']
 			else:
-				return [messages['wrong_entry']]	
+				return messages['wrong_entry']	
 		else:
-			return [messages['word_not_exist']]
+			return messages['word_not_exist']
 
 word = input(messages['type_messages'])
 
@@ -36,5 +36,8 @@ result = find_word(word)
 
 print('')
 
-for item in result:
-	print(item, '\n')
+if type(result) == list:
+	for item in result:
+		print(item, '\n')
+else:
+	print(result, '\n')
