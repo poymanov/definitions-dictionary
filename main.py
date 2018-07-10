@@ -1,10 +1,12 @@
 import json
 
 def find_word(data, word):
+	word = word.lower()	
+	
 	if word in data:
 		return data[word]
 	else:
-		return ["Word doesn't exists"]
+		return ["Word doesn't exists. Please check it double"]
 
 data = json.load(open('data.json'))
 
